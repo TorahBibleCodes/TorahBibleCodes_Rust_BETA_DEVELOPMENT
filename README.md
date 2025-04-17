@@ -1,0 +1,2 @@
+# TorahBibleCodes_Rust_BETA_DEVELOPMENT
+TorahBibleCodes in the FRIGHTENINGLY FAST Rust language - BETA DEVELOPMENT - WORK IN PROGRESS
