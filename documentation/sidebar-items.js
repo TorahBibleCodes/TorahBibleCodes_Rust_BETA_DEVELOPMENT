@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["main"],"mod":["mod_0_GetUserInput_CodexToSearch","mod_1_GetUserInput_TextDetails","mod_2_GetFilePaths","mod_3_LoadAndParseJSON","mod_4_DataObjectsCreate","mod_5_DataObjectsCreate","mod_6_CalculateLetterPercentages","mod_7_DataObjectsCreate","mod_cls_99_LetterObject"]};

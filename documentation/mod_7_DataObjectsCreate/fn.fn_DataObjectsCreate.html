@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="A module for creating a data structure that maps letter positions to words in a Hebrew text sequence."><title>fn_DataObjectsCreate in tbc_rust::mod_7_DataObjectsCreate - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-6c3ea77c.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="tbc_rust" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0 (05f9846f8 2025-03-31)" data-channel="1.86.0" data-search-js="search-581efc7a.js" data-settings-js="settings-6dad6058.js" ><script src="../../static.files/storage-3a5871a4.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-4d63596a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../tbc_rust/index.html">tbc_<wbr>rust</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">fn_<wbr>Data<wbr>Objects<wbr>Create</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#arguments" title="Arguments">Arguments</a></li><li><a href="#returns" title="Returns">Returns</a></li><li><a href="#examples" title="Examples">Examples</a></li><li><a href="#panics" title="Panics">Panics</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In tbc_<wbr>rust::<wbr>mod_<wbr>7_<wbr>Data<wbr>Objects<wbr>Create</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">tbc_rust</a>::<wbr><a href="index.html">mod_7_DataObjectsCreate</a></div><h1>Function <span class="fn">fn_DataObjectsCreate</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/tbc_rust/mod_7_DataObjectsCreate.rs.html#46-87">Source</a> </span></div><pre class="rust item-decl"><code>pub fn fn_DataObjectsCreate(ListOfWords: <a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;) -&gt; <a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.86.0/std/primitive.u32.html">u32</a>&gt;&gt;</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A module for creating a data structure that maps letter positions to words in a Hebrew text sequence.</p>
+<p>MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -&gt; LIST OF LISTS OF LETTER POSITION INDEXES</p>
+<p>This module provides functionality to process a list of Hebrew words and generate a vector of vectors, where
+each inner vector contains the position indexes of the letters in a corresponding word. It creates a data structure
+that tracks the sequential position of each letter within the entire text sequence for each word.</p>
+<p>This function iterates through each word in the provided list, processes each letter in the word, and assigns a
+sequential position index to each letter based on its order in the text. Each word’s letter positions are collected
+into a temporary vector, which is then added to the result vector. The function ensures that letter positions are
+tracked continuously across all words.</p>
+<h2 id="arguments"><a class="doc-anchor" href="#arguments">§</a>Arguments</h2>
+<ul>
+<li><code>ListOfWords</code> - A <code>Vec&lt;String&gt;</code> containing the sequence of Hebrew words to process.</li>
+</ul>
+<h2 id="returns"><a class="doc-anchor" href="#returns">§</a>Returns</h2>
+<p>A <code>Vec&lt;Vec&lt;u32&gt;&gt;</code> where:</p>
+<ul>
+<li>Each inner <code>Vec&lt;u32&gt;</code> represents a word and contains the sequential position indexes (starting from 1) of each letter in that word.</li>
+<li>The outer <code>Vec</code> contains one inner vector of integers per word from the input <code>ListOfWords</code>.</li>
+</ul>
+<p>Example input <code>ListOfWords</code>:</p>
+<ul>
+<li><code>["בראשית", "ברא", "אלהים"]</code></li>
+</ul>
+<p>Example output:</p>
+<ul>
+<li><code>[[1, 2, 3, 4, 5, 6, 7], [8, 9, 10], [11, 12, 13, 14, 15]]</code>
+<ul>
+<li>First word “בראשית” has letters at positions 1 to 7.</li>
+<li>Second word “ברא” has letters at positions 8 to 10.</li>
+<li>Third word “אלהים” has letters at positions 11 to 15.</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// CALL MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -&gt; LIST OF LISTS OF LETTER POSITION INDEXES
+</span><span class="kw">let </span>ListOfIndexes4LettersInEachWord = mod_7_DataObjectsCreate::fn_DataObjectsCreate(ListOfWords);</code></pre></div>
+<h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
+<p>This function does not panic under normal circumstances. It assumes valid input data (a list of strings containing
+valid Unicode Hebrew characters) and processes each word and letter sequentially.</p>
+<p>MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -&gt; LIST OF LISTS OF LETTER POSITION INDEXES</p>
+</div></details></section></div></main></body></html>

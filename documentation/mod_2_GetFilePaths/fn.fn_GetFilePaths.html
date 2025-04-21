@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="A module for retrieving file paths to JSON data files for Hebrew Bible codices."><title>fn_GetFilePaths in tbc_rust::mod_2_GetFilePaths - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-6c3ea77c.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="tbc_rust" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0 (05f9846f8 2025-03-31)" data-channel="1.86.0" data-search-js="search-581efc7a.js" data-settings-js="settings-6dad6058.js" ><script src="../../static.files/storage-3a5871a4.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-4d63596a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../tbc_rust/index.html">tbc_<wbr>rust</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">fn_<wbr>GetFile<wbr>Paths</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#arguments" title="Arguments">Arguments</a></li><li><a href="#returns" title="Returns">Returns</a></li><li><a href="#examples" title="Examples">Examples</a></li><li><a href="#panics" title="Panics">Panics</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In tbc_<wbr>rust::<wbr>mod_<wbr>2_<wbr>GetFile<wbr>Paths</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">tbc_rust</a>::<wbr><a href="index.html">mod_2_GetFilePaths</a></div><h1>Function <span class="fn">fn_GetFilePaths</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/tbc_rust/mod_2_GetFilePaths.rs.html#59-111">Source</a> </span></div><pre class="rust item-decl"><code>pub fn fn_GetFilePaths(NumberOfCodex: <a class="primitive" href="https://doc.rust-lang.org/1.86.0/std/primitive.u32.html">u32</a>) -&gt; (<a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A module for retrieving file paths to JSON data files for Hebrew Bible codices.</p>
+<p>MODULE.FUNCTION() #2 - GET FILE PATHS FOR SOURCE TEXTS; RETURNS -&gt; (STRING, STRING)</p>
+<p>This module provides functionality to determine the file paths for JSON data files
+containing Hebrew Bible texts based on the selected codex. It retrieves file paths
+for JSON data files based on the selected Hebrew Bible codex.</p>
+<p>This function takes a codex number, determines the appropriate JSON file paths for
+the Dictionary of Verses (With No Spaces) (D) and Dictionary of Verses (With Spaces) (DS) files corresponding to the selected codex, and
+returns a tuple containing these two file paths.</p>
+<h2 id="arguments"><a class="doc-anchor" href="#arguments">§</a>Arguments</h2>
+<ul>
+<li><code>NumberOfCodex</code> - A <code>u32</code> representing the selected codex (1: Koren, 2: Leningrad, 3: MAM).</li>
+</ul>
+<h2 id="returns"><a class="doc-anchor" href="#returns">§</a>Returns</h2>
+<p>A tuple <code>(String, String)</code> containing:</p>
+<ul>
+<li>The file path for the Dictionary of Verses (With No Spaces) file (D) as a <code>String</code>: <code>D</code> = Dictionary of Verses (With No Spaces)</li>
+<li>The file path for the Dictionary of Verses (With Spaces) file (DS) as a <code>String</code>: <code>DS</code> = Dictionary of Verses (With Spaces)</li>
+</ul>
+<p>For Codex 1 - Koren:</p>
+<ul>
+<li><code>1</code>: Koren Codex - Dictionary of Verses (With No Spaces) file (D): “../src/texts/JSONData_D_Koren.json”</li>
+<li><code>1</code>: Koren Codex - Dictionary of Verses (With Spaces) file (DS): “../src/texts/JSONData_DS_Koren.json”</li>
+</ul>
+<p>For Codex 2 - Leningrad:</p>
+<ul>
+<li><code>2</code>: Leningrad Codex - Dictionary of Verses (With No Spaces) file (D): “../src/texts/JSONData_D_Leningrad.json”</li>
+<li><code>2</code>: Leningrad Codex - Dictionary of Verses (With Spaces) file (DS): “../src/texts/JSONData_DS_Leningrad.json”</li>
+</ul>
+<p>For Codex 3 - MAM:</p>
+<ul>
+<li><code>3</code>: MAM Codex - Dictionary of Verses (With No Spaces) file (D): “../src/texts/JSONData_D_MAM.json”</li>
+<li><code>3</code>: MAM Codex - Dictionary of Verses (With Spaces) file (DS): “../src/texts/JSONData_DS_MAM.json”</li>
+</ul>
+<p>The codices used here are the same codices used in the TorahBibleCodes Python software:
+<a href="https://GitHub.com/TorahBibleCodes/TorahBibleCodes">https://GitHub.com/TorahBibleCodes/TorahBibleCodes</a></p>
+<p>However, for sake of development efficiency and uniformity of codex data structures, it was deemed suitable to export
+the organized codex data as JSON files from the Python version of the program, and then open the JSON files in Rust:
+this instead of parsing three separate codices with three separate raw formats that will take much more development time in Rust,
+i.e. when this has already been done and solved with Python, and thus this step of preparing the raw data into uniform Hebrew for all three codices can be skipped
+in the transposition of the software into Rust.</p>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// SIMULATING FUNCTION CALL THAT SELECTS CODEX 1 - KOREN:
+// CALL MODULE.FUNCTION() #2 - GET FILE PATHS FOR SOURCE TEXTS; RETURNS -&gt; (STRING, STRING)
+</span><span class="kw">let </span>(FilePath_D, FilePath_DS) = mod_2_GetFilePaths::fn_GetFilePaths(<span class="number">1</span>);
+<span class="comment">// FilePath_D would be "../src/texts/JSONData_D_Koren.json"
+// FilePath_DS would be "../src/texts/JSONData_DS_Koren.json"</span></code></pre></div>
+<h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
+<p>This function does not panic under normal circumstances. Invalid codex numbers are
+handled by returning empty strings and printing an error message to stderr.</p>
+<p>MODULE.FUNCTION() #2 - GET FILE PATHS FOR SOURCE TEXTS; RETURNS -&gt; (STRING, STRING)</p>
+</div></details></section></div></main></body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Prompts the user to select a Hebrew Bible codex and returns the chosen codex number."><title>fn_GetUserInput in tbc_rust::mod_0_GetUserInput_CodexToSearch - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-6c3ea77c.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="tbc_rust" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0 (05f9846f8 2025-03-31)" data-channel="1.86.0" data-search-js="search-581efc7a.js" data-settings-js="settings-6dad6058.js" ><script src="../../static.files/storage-3a5871a4.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-4d63596a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../tbc_rust/index.html">tbc_<wbr>rust</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">fn_<wbr>GetUser<wbr>Input</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#arguments" title="Arguments">Arguments</a></li><li><a href="#returns" title="Returns">Returns</a></li><li><a href="#examples" title="Examples">Examples</a></li><li><a href="#panics" title="Panics">Panics</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In tbc_<wbr>rust::<wbr>mod_<wbr>0_<wbr>GetUser<wbr>Input_<wbr>Codex<wbr>ToSearch</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">tbc_rust</a>::<wbr><a href="index.html">mod_0_GetUserInput_CodexToSearch</a></div><h1>Function <span class="fn">fn_GetUserInput</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/tbc_rust/mod_0_GetUserInput_CodexToSearch.rs.html#44-100">Source</a> </span></div><pre class="rust item-decl"><code>pub fn fn_GetUserInput() -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.86.0/std/primitive.u32.html">u32</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Prompts the user to select a Hebrew Bible codex and returns the chosen codex number.</p>
+<p>MODULE.FUNCTION() #0 - GET USER INPUT; CHOOSE CODEX TO SEARCH; RETURNS -&gt; INTEGER</p>
+<p>This function displays a menu of available codices (Koren, Leningrad, MAM - or QUIT / EXIT),
+reads the user’s input as a string, converts it to an unsigned 32-bit integer, and
+returns the number corresponding to the selected codex. It includes error handling for
+invalid input.</p>
+<h2 id="arguments"><a class="doc-anchor" href="#arguments">§</a>Arguments</h2>
+<p>None</p>
+<h2 id="returns"><a class="doc-anchor" href="#returns">§</a>Returns</h2>
+<p>A <code>u32</code> representing the selected codex:</p>
+<ul>
+<li><code>1</code>: Koren Codex</li>
+<li><code>2</code>: Leningrad Codex</li>
+<li><code>3</code>: Miqra According to the Masorah (MAM) - based on the Aleppo Codex</li>
+<li><code>0</code>: QUIT / EXIT</li>
+</ul>
+<p>Please select Hebrew Bible codex to search:</p>
+<ul>
+<li><code>1</code> - Koren Codex - Claremont Michigan Transliteration: [Torah: 304805]</li>
+<li><code>2</code> - Leningrad Codex: [Torah: 304850; Prophets: 553785; Writings: 338407; Tanach: 1197042]</li>
+<li><code>3</code> - Miqra According to the Masorah (MAM) Collection of Manuscripts: [Torah: 304801; Prophets: 553698; Writings: 338340; Tanach: 1196839]</li>
+<li><code>0</code> - QUIT / EXIT</li>
+</ul>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// SIMULATING FUNCTION CALL THAT SELECTS AND RETURNS CODEX 1 - KOREN
+// CALL MODULE.FUNCTION() #0 - GET USER INPUT; CHOOSE CODEX TO SEARCH; RETURNS -&gt; INTEGER
+</span><span class="kw">let </span>NumberOfCodex = mod_0_GetUserInput_CodexToSearch::fn_GetUserInput();
+<span class="comment">// Assuming input is "1", codex would be 1</span></code></pre></div>
+<h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
+<p>Panics if the input cannot be parsed as a <code>u32</code> (e.g., non-numeric input).
+The function uses <code>expect</code> to handle this, displaying “Please enter a valid number”.</p>
+<p>MODULE.FUNCTION() #0 - GET USER INPUT; CHOOSE CODEX TO SEARCH; RETURNS -&gt; INTEGER</p>
+</div></details></section></div></main></body></html>

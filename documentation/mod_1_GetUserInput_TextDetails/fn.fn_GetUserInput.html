@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="A module for handling user input to select a Hebrew Bible codex and specific text."><title>fn_GetUserInput in tbc_rust::mod_1_GetUserInput_TextDetails - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-6c3ea77c.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="tbc_rust" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0 (05f9846f8 2025-03-31)" data-channel="1.86.0" data-search-js="search-581efc7a.js" data-settings-js="settings-6dad6058.js" ><script src="../../static.files/storage-3a5871a4.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-4d63596a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../tbc_rust/index.html">tbc_<wbr>rust</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">fn_<wbr>GetUser<wbr>Input</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#arguments" title="Arguments">Arguments</a></li><li><a href="#returns" title="Returns">Returns</a></li><li><a href="#examples" title="Examples">Examples</a></li><li><a href="#panics" title="Panics">Panics</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In tbc_<wbr>rust::<wbr>mod_<wbr>1_<wbr>GetUser<wbr>Input_<wbr>Text<wbr>Details</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">tbc_rust</a>::<wbr><a href="index.html">mod_1_GetUserInput_TextDetails</a></div><h1>Function <span class="fn">fn_GetUserInput</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/tbc_rust/mod_1_GetUserInput_TextDetails.rs.html#152-342">Source</a> </span></div><pre class="rust item-decl"><code>pub fn fn_GetUserInput(NumberOfCodex: <a class="primitive" href="https://doc.rust-lang.org/1.86.0/std/primitive.u32.html">u32</a>) -&gt; (<a class="struct" href="https://doc.rust-lang.org/1.86.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="primitive" href="https://doc.rust-lang.org/1.86.0/std/primitive.u32.html">u32</a>)</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A module for handling user input to select a Hebrew Bible codex and specific text.</p>
+<p>MODULE.FUNCTION() #1 - GET NAME OF CODEX; GET NUMBER OF TEXT(S) CHOSEN; RETURNS -&gt; TUPLE OF (STRING, INTEGER)</p>
+<p>This module provides functionality to prompt the user to choose a Hebrew Bible codex
+and a specific text within that codex, returning the codex name and text number. The user
+selects a specific text within a chosen Hebrew Bible codex and returns the codex name and text number.</p>
+<p>This function takes a codex number, displays a menu of available texts for that codex
+(e.g., Genesis, Exodus, etc. or Torah for Koren; additional books for Leningrad and MAM),
+reads the user’s input as a string, converts it to an unsigned 32-bit integer, and
+returns a tuple containing the codex name and the selected text number. It includes
+error handling for invalid input.</p>
+<h2 id="arguments"><a class="doc-anchor" href="#arguments">§</a>Arguments</h2>
+<ul>
+<li><code>NumberOfCodex</code> - A <code>u32</code> representing the selected codex (0: None, 1: Koren, 2: Leningrad, 3: MAM).</li>
+</ul>
+<h2 id="returns"><a class="doc-anchor" href="#returns">§</a>Returns</h2>
+<p>A tuple <code>(String, u32)</code> containing:</p>
+<ul>
+<li>The name of the codex (e.g., “Codex: 1 - Koren”) as a <code>String</code>.</li>
+<li>The number of the selected text as a <code>u32</code> (e.g., 1 for Genesis, 40 for Torah, 0 for Quit).</li>
+</ul>
+<p>For Codex 1 - Koren:</p>
+<ul>
+<li><code>1</code> - Genesis - 78064 letters</li>
+<li><code>2</code> - Exodus - 63529 letters</li>
+<li><code>3</code> - Leviticus - 44790 letters</li>
+<li><code>4</code> - Numbers - 63530 letters</li>
+<li><code>5</code> - Deuteronomy - 54892 letters</li>
+<li><code>40</code> - Pentateuch (Torah) - 304805 letters</li>
+<li><code>0</code> - QUIT / EXIT</li>
+</ul>
+<p>For Codex 2 - Leningrad:</p>
+<ul>
+<li><code>1</code> - Genesis - 78069 letters</li>
+<li><code>2</code> - Exodus - 63531 letters</li>
+<li><code>3</code> - Leviticus - 44795 letters</li>
+<li><code>4</code> - Numbers - 63545 letters</li>
+<li><code>5</code> - Deuteronomy - 54910 letters</li>
+<li><code>6</code> - Joshua - 39807 letters</li>
+<li><code>7</code> - Judges - 38944 letters</li>
+<li><code>8</code> - I Samuel - 51354 letters</li>
+<li><code>9</code> - II Samuel - 42178 letters</li>
+<li><code>10</code> - I Kings - 50623 letters</li>
+<li><code>11</code> - II Kings - 47837 letters</li>
+<li><code>12</code> - Isaiah - 66888 letters</li>
+<li><code>13</code> - Jeremiah - 84912 letters</li>
+<li><code>14</code> - Ezekiel - 74499 letters</li>
+<li><code>15</code> - Hosea - 9385 letters</li>
+<li><code>16</code> - Joel - 3872 letters</li>
+<li><code>17</code> - Amos - 8033 letters</li>
+<li><code>18</code> - Obadiah - 1119 letters</li>
+<li><code>19</code> - Jonah - 2700 letters</li>
+<li><code>20</code> - Micah - 5570 letters</li>
+<li><code>21</code> - Nahum - 2252 letters</li>
+<li><code>22</code> - Habakkuk - 2598 letters</li>
+<li><code>23</code> - Zephaniah - 2996 letters</li>
+<li><code>24</code> - Haggai - 2336 letters</li>
+<li><code>25</code> - Zechariah - 12432 letters</li>
+<li><code>26</code> - Malachi - 3450 letters</li>
+<li><code>27</code> - Psalms - 78833 letters</li>
+<li><code>28</code> - Proverbs - 26507 letters</li>
+<li><code>29</code> - Job - 31862 letters</li>
+<li><code>30</code> - Song of Songs - 5151 letters</li>
+<li><code>31</code> - Ruth - 4947 letters</li>
+<li><code>32</code> - Lamentations - 5980 letters</li>
+<li><code>33</code> - Ecclesiastes - 10969 letters</li>
+<li><code>34</code> - Esther - 12112 letters</li>
+<li><code>35</code> - Daniel - 24291 letters</li>
+<li><code>36</code> - Ezra - 15764 letters</li>
+<li><code>37</code> - Nehemiah - 22513 letters</li>
+<li><code>38</code> - I Chronicles - 44558 letters</li>
+<li><code>39</code> - II Chronicles - 54920 letters</li>
+<li><code>40</code> - Pentateuch (Torah) - 304850 letters</li>
+<li><code>41</code> - Prophets (Nevi’im) - 553785 letters</li>
+<li><code>42</code> - Writings (K’tuvim) - 338407 letters</li>
+<li><code>43</code> - Hebrew Bible (Tanach) - 1197042 letters</li>
+<li><code>44</code> - Samuel (I Samuel and II Samuel as one book) - 93532 letters</li>
+<li><code>45</code> - Kings (I Kings and II Kings as one book) - 98460 letters</li>
+<li><code>46</code> - Ezra-Nehemiah (Ezra and Nehemiah as one book) - 38277 letters</li>
+<li><code>47</code> - Chronicles (I Chronicles and II Chronicles as one book) - 99478 letters</li>
+<li><code>0</code> - QUIT / EXIT</li>
+</ul>
+<p>For Codex 3 - MAM:</p>
+<ul>
+<li><code>1</code> - Genesis - 78063 letters</li>
+<li><code>2</code> - Exodus - 63527 letters</li>
+<li><code>3</code> - Leviticus - 44790 letters</li>
+<li><code>4</code> - Numbers - 63529 letters</li>
+<li><code>5</code> - Deuteronomy - 54892 letters</li>
+<li><code>6</code> - Joshua - 39730 letters</li>
+<li><code>7</code> - Judges - 38952 letters</li>
+<li><code>8</code> - I Samuel - 51357 letters</li>
+<li><code>9</code> - II Samuel - 42179 letters</li>
+<li><code>10</code> - I Kings - 50625 letters</li>
+<li><code>11</code> - II Kings - 47822 letters</li>
+<li><code>12</code> - Isaiah - 66874 letters</li>
+<li><code>13</code> - Jeremiah - 84899 letters</li>
+<li><code>14</code> - Ezekiel - 74510 letters</li>
+<li><code>15</code> - Hosea - 9389 letters</li>
+<li><code>16</code> - Joel - 3872 letters</li>
+<li><code>17</code> - Amos - 8034 letters</li>
+<li><code>18</code> - Obadiah - 1119 letters</li>
+<li><code>19</code> - Jonah - 2700 letters</li>
+<li><code>20</code> - Micah - 5571 letters</li>
+<li><code>21</code> - Nahum - 2255 letters</li>
+<li><code>22</code> - Habakkuk - 2596 letters</li>
+<li><code>23</code> - Zephaniah - 2995 letters</li>
+<li><code>24</code> - Haggai - 2336 letters</li>
+<li><code>25</code> - Zechariah - 12433 letters</li>
+<li><code>26</code> - Malachi - 3450 letters</li>
+<li><code>27</code> - Psalms - 78822 letters</li>
+<li><code>28</code> - Proverbs - 26500 letters</li>
+<li><code>29</code> - Job - 31851 letters</li>
+<li><code>30</code> - Song of Songs - 5141 letters</li>
+<li><code>31</code> - Ruth - 4949 letters</li>
+<li><code>32</code> - Lamentations - 5974 letters</li>
+<li><code>33</code> - Ecclesiastes - 10968 letters</li>
+<li><code>34</code> - Esther - 12110 letters</li>
+<li><code>35</code> - Daniel - 24280 letters</li>
+<li><code>36</code> - Ezra - 15762 letters</li>
+<li><code>37</code> - Nehemiah - 22507 letters</li>
+<li><code>38</code> - I Chronicles - 44559 letters</li>
+<li><code>39</code> - II Chronicles - 54917 letters</li>
+<li><code>40</code> - Pentateuch (Torah) - 304801 letters</li>
+<li><code>41</code> - Prophets (Nevi’im) - 553698 letters</li>
+<li><code>42</code> - Writings (K’tuvim) - 338340 letters</li>
+<li><code>43</code> - Hebrew Bible (Tanach) - 1196839 letters</li>
+<li><code>44</code> - Samuel (I Samuel and II Samuel as one book) - 93536 letters</li>
+<li><code>45</code> - Kings (I Kings and II Kings as one book) - 98447 letters</li>
+<li><code>46</code> - Ezra-Nehemiah (Ezra and Nehemiah as one book) - 38269 letters</li>
+<li><code>47</code> - Chronicles (I Chronicles and II Chronicles as one book) - 99476 letters</li>
+<li><code>0</code> - QUIT / EXIT</li>
+</ul>
+<p>For Unknown Codex:</p>
+<ul>
+<li>Returns <code>"Codex: _ - Unknown Codex"</code> and the input number.</li>
+</ul>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// SIMULATING FUNCTION CALL WITH USER INPUT OF "1" FOR GENESIS IN KOREN CODEX
+// CALL MODULE.FUNCTION() #1 - GET NAME OF CODEX; GET NUMBER OF TEXT(S) CHOSEN; RETURNS -&gt; TUPLE OF (STRING, INTEGER) 
+</span><span class="kw">let </span>(NameOfCodex, NumberOfTextChosen) = mod_1_GetUserInput_TextDetails::fn_GetUserInput(<span class="number">1</span>);
+<span class="comment">// Assuming input is "1", NameOfCodex would be "Codex: 1 - Koren", NumberOfTextChosen would be 1</span></code></pre></div>
+<h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
+<p>Panics if the input cannot be parsed as a <code>u32</code> (e.g., non-numeric input). The function
+uses <code>expect</code> to handle this, displaying “Please enter a valid number”.</p>
+<p>MODULE.FUNCTION() #1 - GET NAME OF CODEX; GET NUMBER OF TEXT(S) CHOSEN; RETURNS -&gt; TUPLE OF (STRING, INTEGER)</p>
+</div></details></section></div></main></body></html>
