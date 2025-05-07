@@ -3,7 +3,7 @@ use indexmap::IndexMap;
 
 /// A module for creating a data structure that maps word position indices to DWT keys in a Hebrew text sequence.
 ///
-/// MODULE.FUNCTION() #8E - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
+/// MODULE.FUNCTION() #9 - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
 ///
 /// This module provides functionality to process a dictionary of Hebrew word positions (`DWT`) and generate a new dictionary (`DWTK`)
 /// that maps sequential word position indices to the 5-tuple keys of `DWT`. It creates a data structure that tracks the position index
@@ -33,21 +33,21 @@ use indexmap::IndexMap;
 ///
 /// # Examples
 /// ```
-/// // CALL MODULE.FUNCTION() #8E - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
-/// let DWTK = mod_8E_DataObjectsCreate::fn_DataObjectsCreate(DWT);
+/// // CALL MODULE.FUNCTION() #9 - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
+/// let DWTK = mod_9_DataObjectsCreate::fn_DataObjectsCreate(DWT);
 /// ```
 ///
 /// # Panics
 /// This function does not panic under normal circumstances. It assumes a valid `IndexMap` input and processes its keys sequentially.
 ///
-/// MODULE.FUNCTION() #8E - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
+/// MODULE.FUNCTION() #9 - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
 /// 
-// BEGIN FUNCTION() #8E - DATA OBJECTS CREATE
+// BEGIN FUNCTION() #9 - DATA OBJECTS CREATE
 pub fn fn_DataObjectsCreate(DWT: IndexMap<(u32, u32, u32, u32, u32), String>) -> IndexMap<u32, (u32, u32, u32, u32, u32)> {
     
     // TEST PRINT OUTPUT
     println!("\n"); // PRINT SPACE
-    println!("WITHIN FUNCTION:  BEGIN FUNCTION #8E - DATA OBJECTS CREATE");
+    println!("WITHIN FUNCTION:  BEGIN FUNCTION #9 - DATA OBJECTS CREATE");
     
     // DECLARE VARIABLES 
     let mut WordCounter = 1;
@@ -67,9 +67,9 @@ pub fn fn_DataObjectsCreate(DWT: IndexMap<(u32, u32, u32, u32, u32), String>) ->
 
     // TEST PRINT OUTPUT
     println!("\n"); // PRINT SPACE
-    println!("WITHIN FUNCTION:  END FUNCTION #8E - DATA OBJECTS CREATE");
+    println!("WITHIN FUNCTION:  END FUNCTION #9 - DATA OBJECTS CREATE");
 
     // RETURN VARIABLES TO PROGRAM
     DWTK
 }
-// END FUNCTION() #8E - DATA OBJECTS CREATE
+// END FUNCTION() #9 - DATA OBJECTS CREATE

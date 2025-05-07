@@ -12,7 +12,7 @@
 /// like spaces and em-dashes by assigning them a value of 0. The function ensures accurate mapping for all Hebrew letters.
 ///
 /// # Arguments
-/// * `SequenceOfLetters` - A `Vec<char>` containing the sequence of Hebrew letters to process.
+/// * `SequenceOfLetters` - A reference to a `Vec<char>` containing the sequence of Hebrew letters to process.
 ///
 /// # Returns
 /// A `Vec<u32>` containing the numerical values (sums) for each letter in the input sequence.
@@ -29,7 +29,7 @@
 /// # Examples
 /// ```
 /// // CALL MODULE.FUNCTION() #10 - GET NUMBER VALUE OF EACH LETTER IN LETTER STRING
-/// let ListOfNumberValues4Letters = mod_9A_GetNumberValues::fn_GetNumberValues(SequenceOfLetters);
+/// let ListOfNumberValues4Letters = mod_10_GetNumberValues4Letters::fn_GetNumberValues(&SequenceOfLetters);
 /// ```
 ///
 /// # Panics
@@ -39,7 +39,8 @@
 /// MODULE.FUNCTION() #10 - GET NUMBER VALUE OF EACH LETTER IN LETTER STRING; RETURNS -> ListOfNumberValues4Letters
 /// 
 // BEGIN FUNCTION() #10 - GET NUMBER VALUES FOR LETTERS
-pub fn fn_GetNumberValues(SequenceOfLetters: Vec<char>) -> Vec<u32> {
+#[allow(unused_parens)]
+pub fn fn_GetNumberValues(SequenceOfLetters: &Vec<char>) -> Vec<u32> {
     
     // TEST PRINT OUTPUT
     // println!("\n"); // PRINT SPACE
@@ -57,7 +58,7 @@ pub fn fn_GetNumberValues(SequenceOfLetters: Vec<char>) -> Vec<u32> {
 
     // BEGIN FOR LOOP
     // FOR EACH ELEMENT IN SEQUENCE S, L, etc.
-    for each in SequenceOfLetters {
+    for &each in SequenceOfLetters.iter() {
         
         // FOR EACH LETTER IN WORD SEQUENCE // STRING S
         let value = match each {

@@ -21,7 +21,7 @@ use std::io;
 /// - `0`: QUIT / EXIT
 /// 
 /// Please select Hebrew Bible codex to search:
-/// - `1` - Koren Codex - Claremont Michigan Transliteration: [Torah: 304805]
+/// - `1` - Koren Codex - Michigan Claremont Transliteration: [Torah: 304805]
 /// - `2` - Leningrad Codex: [Torah: 304850; Prophets: 553785; Writings: 338407; Tanach: 1197042]
 /// - `3` - Miqra According to the Masorah (MAM) Collection of Manuscripts: [Torah: 304801; Prophets: 553698; Writings: 338340; Tanach: 1196839]
 /// - `0` - QUIT / EXIT
@@ -51,7 +51,7 @@ pub fn fn_GetUserInput() -> u32 {
     println!("\n");  // PRINT SPACE
     println!("Please select Hebrew Bible codex to search:");
     println!("\n");  // PRINT SPACE
-    println!("1 - Koren Codex - Claremont Michigan Transliteration: [Torah: 304805]");
+    println!("1 - Koren Codex - Michigan Claremont Transliteration: [Torah: 304805]");
       
     println!("\n");  // PRINT SPACE
     println!("2 - Leningrad Codex: [Torah: 304850; Prophets: 553785; Writings: 338407; Tanach: 1197042]");

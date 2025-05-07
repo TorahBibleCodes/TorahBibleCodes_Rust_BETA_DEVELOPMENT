@@ -14,7 +14,7 @@
 /// tracked continuously across all words.
 ///
 /// # Arguments
-/// * `ListOfWords` - A `Vec<String>` containing the sequence of Hebrew words to process.
+/// * `ListOfWords` - A `&Vec<String>` containing the sequence of Hebrew words to process.
 ///
 /// # Returns
 /// A `Vec<Vec<u32>>` where:
@@ -33,7 +33,7 @@
 /// # Examples
 /// ```
 /// // CALL MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -> LIST OF LISTS OF LETTER POSITION INDEXES
-/// let ListOfIndexes4LettersInEachWord = mod_7_DataObjectsCreate::fn_DataObjectsCreate(ListOfWords); //
+/// let ListOfIndexes4LettersInEachWord = mod_7_DataObjectsCreate::fn_DataObjectsCreate(&ListOfWords); //
 /// ```
 ///
 /// # Panics
@@ -43,7 +43,7 @@
 /// MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -> LIST OF LISTS OF LETTER POSITION INDEXES
 /// 
 // BEGIN FUNCTION() #7 - DATA OBJECTS CREATE
-pub fn fn_DataObjectsCreate(ListOfWords: Vec<String>) -> Vec<Vec<u32>> {
+pub fn fn_DataObjectsCreate(ListOfWords: &Vec<String>) -> Vec<Vec<u32>> {
     
     // TEST PRINT OUTPUT
     println!("\n");  // PRINT SPACE
@@ -56,7 +56,7 @@ pub fn fn_DataObjectsCreate(ListOfWords: Vec<String>) -> Vec<Vec<u32>> {
 
     // BEGIN FOR LOOP
     // FOR EACH WORD IN ListOfWords...
-    for EachWord in ListOfWords { // EACH WORD
+    for EachWord in ListOfWords.iter() { // EACH WORD
 
         // BEGIN FOR LOOP
         for EachLetter in EachWord.chars() { // EACH LETTER
@@ -83,6 +83,5 @@ pub fn fn_DataObjectsCreate(ListOfWords: Vec<String>) -> Vec<Vec<u32>> {
 
     // RETURN VARIABLES TO PROGRAM
     ListOfIndexes4LettersInEachWord
-
 }
 // END FUNCTION() #7 - DATA OBJECTS CREATE

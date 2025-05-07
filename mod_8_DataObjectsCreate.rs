@@ -43,33 +43,49 @@ use indexmap::IndexMap;
 /// MODULE.FUNCTION() #8 - DATA OBJECTS CREATE; RETURNS -> D5K == DICT OF D5 KEYS
 /// 
 // BEGIN FUNCTION() #8 - DATA OBJECTS CREATE
-pub fn fn_DataObjectsCreate(D5: IndexMap<(u32, u32, u32, u32, u32), char>) -> IndexMap<u32, (u32, u32, u32, u32, u32)> {
+// FUNCTION() #8 - DATA OBJECTS CREATE
+pub fn fn_DataObjectsCreate(D5: &IndexMap<(u32, u32, u32, u32, u32), char>) -> IndexMap<u32, (u32, u32, u32, u32, u32)> {
+    
+    /*
+    MODULE.FUNCTION() #8 - DATA OBJECTS CREATE; RETURNS -> D5K == DICT OF D5 KEYS
+    */
     
     // TEST PRINT OUTPUT
-    println!("\n"); // PRINT SPACE
+    println!("\n");  // PRINT SPACE
     println!("WITHIN FUNCTION:  BEGIN FUNCTION #8 - DATA OBJECTS CREATE");
     
-    // DECLARE VARIABLES 
-    let mut LetterCounter = 1;
+    // DECLARE VARIABLES
     let mut D5K: IndexMap<u32, (u32, u32, u32, u32, u32)> = IndexMap::new();
-
+    let mut IndexCustom = 1;
+    
     // BEGIN FOR LOOP
-    // FOR EACH KEY IN DICTIONARY "D5"...
-    for EachKey in D5.keys() { // EACH VERSE
+    // FOR EACH 5-DIGIT TUPLE KEY IN D5...
+    for each in D5.keys() { // EACH == KEY OF D5
         
-        // ADD EACH CURRENT TOTAL-LETTER-COUNT-VALUE-INDEX-POSITION-IN-D5 (I.E. EACH KEY) TO BE VALUE OF D5K WITH THE KEY OF D5K THE SAME VALUE
-        D5K.insert(LetterCounter, *EachKey);
-
-        // INCREMENT LETTER COUNTER
-        LetterCounter += 1;
+        // TEST PRINT OUTPUT
+        // print("index = ", IndexCustom)
+        // print("each D5 key =", each)
+        // println!("index = {}", IndexCustom);
+        // println!("each D5 key = {:?}", each);
+        
+        // ADD KEY-VALUE PAIR TO D5K
+        D5K.insert(IndexCustom, *each);
+        
+        // INCREMENT INDEX COUNTER
+        IndexCustom += 1;
     }
     // END FOR LOOP
-
+    
     // TEST PRINT OUTPUT
-    println!("\n"); // PRINT SPACE
+    // print(D5K)
+    // println!("{:?}", D5K);
+    
+    // TEST PRINT OUTPUT
+    println!("\n");  // PRINT SPACE
     println!("WITHIN FUNCTION:  END FUNCTION #8 - DATA OBJECTS CREATE");
-
-    // RETURN VARIABLES TO PROGRAM
-    D5K
+    
+    // RETURN VARIABLES
+    return D5K;
 }
+
 // END FUNCTION() #8 - DATA OBJECTS CREATE
