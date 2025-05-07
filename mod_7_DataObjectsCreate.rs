@@ -33,7 +33,7 @@
 /// # Examples
 /// ```
 /// // CALL MODULE.FUNCTION() #7 - DATA OBJECTS CREATE; RETURNS -> LIST OF LISTS OF LETTER POSITION INDEXES
-/// let ListOfIndexes4LettersInEachWord = mod_7_DataObjectsCreate::fn_DataObjectsCreate(ListOfWords);
+/// let ListOfIndexes4LettersInEachWord = mod_7_DataObjectsCreate::fn_DataObjectsCreate(ListOfWords); //
 /// ```
 ///
 /// # Panics
