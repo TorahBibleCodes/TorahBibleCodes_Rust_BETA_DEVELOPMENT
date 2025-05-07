@@ -4,6 +4,7 @@
 
 /// LetterObject struct - represents a single letter with all its attributes
 /// Equivalent to the Python cls_LetterObject class
+/// /// #[allow(clippy::too_many_arguments)]
 #[derive(Debug, Clone)]
 pub struct LetterObject {
     pub Letter: Option<char>,
@@ -21,56 +22,14 @@ pub struct LetterObject {
     // ELS-RELATED FIELDS
     // pub IsMatchInELS: Option<bool>,
     // pub NumberOfMatches: Option<u32>,
-    // pub ListOfMatches: Option<Vec<usize>>,
-    // pub DictOfMatches: Option<IndexMap<String, usize>>,
+    // pub ListOfMatches: Option<Vec<u32>>,
+    // pub DictOfMatches: Option<IndexMap<String, u32>>,
 }
 
 impl LetterObject {
     /// Constructor for LetterObject
     /// All parameters are optional, defaulting to None
-    /// 
-    #[allow(clippy::too_many_arguments)]
-
-    pub fn new(
-        Letter: Option<char>,
-        LetterGematriaNumberValue: Option<u32>,
-        LetterPositionIndex: Option<u32>,
-        LetterCoordinatesD5K: Option<(u32, u32, u32, u32, u32)>,
-        LetterCoordinatesDL: Option<(u32, u32, u32, u32)>,
-        LetterPositionInWord: Option<u32>,
-        WordNumber: Option<u32>,
-        Word: Option<String>,
-        WordNumberInVerse: Option<u32>,
-        WordCoordinatesDWTK: Option<(u32, u32, u32, u32, u32)>,
-        VerseCoordinatesDS: Option<(u32, u32, u32)>,
-        Verse: Option<String>,
-        // IsMatchInELS: Option<bool>,
-        // NumberOfMatches: Option<u32>,
-        // ListOfMatches: Option<Vec<usize>>,
-        // DictOfMatches: Option<IndexMap<String, usize>>,
-
-    ) -> Self {
-        LetterObject {
-
-            Letter,
-            LetterGematriaNumberValue,
-            LetterPositionIndex,
-            LetterCoordinatesD5K,
-            LetterCoordinatesDL,
-            LetterPositionInWord,
-            WordNumber,
-            Word,
-            WordNumberInVerse,
-            WordCoordinatesDWTK,
-            VerseCoordinatesDS,
-            Verse,
-        //    IsMatchInELS,
-        //    NumberOfMatches,
-        //    ListOfMatches,
-        //    DictOfMatches,
-
-        }
-    }
+    /// #[allow(clippy::too_many_arguments)]
     
     /// Simplified constructor with only essential parameters
     pub fn fn_ConstructLO(

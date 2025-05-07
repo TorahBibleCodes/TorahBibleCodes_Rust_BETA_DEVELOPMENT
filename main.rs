@@ -14,6 +14,7 @@ mod mod_7_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #7 - CREATE SECONDARY D
 mod mod_8_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #8
 mod mod_9_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #9
 mod mod_10_GetNumberValues4Letters; // IMPORT MODULE.FUNCTION() #10
+mod mod_11_AddGematriaNumberValuesToLetterObjects; // IMPORT MODULE.FUNCTION() #11
 
 // BEGIN MAIN PROGRAM
 // BEGIN CALL MAIN FUNCTION
@@ -183,7 +184,14 @@ fn main() {
             let N = mod_10_GetNumberValues4Letters::fn_GetNumberValues(L); // ListOfNumberValues4Letter
 
             // TEST PRINT OUTPUT
-            println!("{:?}", N);
+            // println!("{:?}", N);
+
+            // CALL MODULE.FUNCTION() #9AAA - ADD GEMATRIA NUMBER VALUES TO LETTER OBJECTS
+            // RETURNS -> UPDATED DLO
+            let DLO = mod_11_AddGematriaNumberValuesToLetterObjects::fn_AddGematriaNumberValuesToLetterObjects(DLO, N);
+
+            // TEST PRINT OUTPUT
+            println!("DLO: {:?}", DLO);
 
         }
         // END IF / ELSE
