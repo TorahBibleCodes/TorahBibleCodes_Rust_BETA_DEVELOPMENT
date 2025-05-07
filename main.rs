@@ -11,6 +11,9 @@ mod mod_4_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #4 - CREATE INITIAL DAT
 mod mod_5_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #5 - CREATE INITIAL DATA OBJECTS FROM DS // RETURNS ListOfWords, ListOfNumbersOfWordsEachVerse, DictionaryOfWordsEachVerse, DictionaryOfWordsTotal // LW, LNWEV, DWV, DWT
 mod mod_6_CalculateLetterPercentages; // IMPORT MODULE.FUNCTION() #6 - CALCULATE LETTER PERCENTAGES
 mod mod_7_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #7 - CREATE SECONDARY DATA OBJECTS FROM LIST OF WORDS (LW) - RETURNS LIST OF LISTS OF INDICES (INDEXES) FOR LETTERS IN EACH WORD
+mod mod_8_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #8
+mod mod_9_DataObjectsCreate; // IMPORT MODULE.FUNCTION() #9
+mod mod_10_GetNumberValues4Letters; // IMPORT MODULE.FUNCTION() #10
 
 // BEGIN MAIN PROGRAM
 // BEGIN CALL MAIN FUNCTION
@@ -162,8 +165,25 @@ fn main() {
             let ListOfIndexes4LettersInEachWord:Vec<Vec<u32>> = mod_7_DataObjectsCreate::fn_DataObjectsCreate(LW);
 
             // TEST PRINT OUTPUT - LIST OF LISTS
-            println!("ListOfIndexes4LettersInEachWord: '{:?}; Length: {}'", ListOfIndexes4LettersInEachWord, ListOfIndexes4LettersInEachWord.len());
+            // println!("ListOfIndexes4LettersInEachWord: '{:?}; Length: {}'", ListOfIndexes4LettersInEachWord, ListOfIndexes4LettersInEachWord.len());
 
+            // CALL MODULE.FUNCTION() #8 - DATA OBJECTS CREATE; RETURNS -> D5K == DICT OF D5 KEYS // DATA OBJECTS CREATE - RETURNS DICT OF D5 KEYS AS VALUES WITH 1-INDEXED KEY FOR # OF LETTERS IN TEXT
+            let D5K = mod_8_DataObjectsCreate::fn_DataObjectsCreate(D5);
+
+            // TEST PRINT OUTPUT
+            // println!("{:?}", D5K);
+
+            // CALL MODULE.FUNCTION() #9 - DATA OBJECTS CREATE; RETURNS -> DWTK == DICT OF DWT KEYS
+            let DWTK = mod_9_DataObjectsCreate::fn_DataObjectsCreate(DWT);
+
+            // TEST PRINT OUTPUT
+            //println!("{:?}", DWTK);
+
+            // CALL MODULE.FUNCTION() #10 - GET NUMBER VALUE OF EACH LETTER IN LETTER STRING
+            let N = mod_10_GetNumberValues4Letters::fn_GetNumberValues(L); // ListOfNumberValues4Letter
+
+            // TEST PRINT OUTPUT
+            println!("{:?}", N);
 
         }
         // END IF / ELSE
